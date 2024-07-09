@@ -1,63 +1,25 @@
-import ipllogo from '/ipllogo.png'
-import { Link, useLocation, useNavigate } from "react-router-dom";
-export default function Navbar(){
-    const loc = useLocation();
-    const isActive = (path) => {
-    return loc.pathname === path ? "text-primary" : "text-text";
-  };
-    return(
-        <>
-      <nav className="justify-between bg-background font-poppins flex flex-row items-center  ${isActive('/')} ">
-        <div className="logo">
-          <img
-            src={ipllogo}
-            style={{ width: "80px", height: "50px" }}
-            className="my-3 ml-6 mini:ml-8 object-scale-down"
-          />
-        </div>
-        <div className="options gap-6 text-text wb:flex hidden">
-          <Link
-            to="/"
-            className={`${isActive("/")} hover:text-primary transition`}
-          >
-            Home
-          </Link>
+// src/components/Navbar.jsx
+import React from 'react';
 
-          <Link
-            to="/matches"
-            className={`${isActive(
-              "/resources"
-            )} hover:text-primary transition`}
-          >
-            Matches
-          </Link>
+const Navbar = ({ activeTab, setActiveTab }) => {
+  const tabs = ['Home', 'Matches', 'Player Comparison', 'Table'];
 
-          <Link
-            to="/playercomparision"
-            className={`${isActive("/problem")}  hover:text-primary transition`}
+  return (
+    <nav className="bg-gray-900 text-gray-300 p-4 flex justify-between items-center border-b border-gray-700">
+      <div className="flex space-x-6">
+        {tabs.map((tab) => (
+          <button
+            key={tab}
+            className={`${activeTab === tab ? 'text-purple-400 border-b-2 border-purple-400' : 'hover:text-white'} transition duration-300`}
+            onClick={() => setActiveTab(tab)}
           >
-            Player Comparision
-          </Link>
+            {tab}
+          </button>
+        ))}
+      </div>
+      <button className="bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700 transition duration-300">Login</button>
+    </nav>
+  );
+};
 
-          <Link
-            to="/table"
-            className={`${isActive("/test")}  hover:text-primary transition`}
-          >
-            Points Table
-          </Link>
-        </div>
-        <div className="getstarted hidden mr-8 wb:flex items-center">
-          
-          
-            <Link
-              to="/login"
-              className={`getstartedbtn cursor-pointer items-center text-center flex justify-center  bg-primary text-black font-sans w-32 h-10  hover:text-primary hover:bg-white transition`}
-            >
-              Get Started
-            </Link>
-          
-        </div>
-      </nav>
-    </>
-    )
-}
+export default Navbar;
