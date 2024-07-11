@@ -30,6 +30,18 @@ const Home = () => (
           Keep track of the current standings in the league.
         </p>
       </div>
+      <div className="bg-gray-800 p-4 rounded-lg shadow-lg">
+        <h2 className="text-white text-xl mb-2">Fan Query Chatbot</h2>
+        <p className="text-gray-300">
+          Ask questions on IPL and get accurate answers. Created using RAG.
+        </p>
+      </div>
+      <div className="bg-gray-800 p-4 rounded-lg shadow-lg">
+        <h2 className="text-white text-xl mb-2">Statistics</h2>
+        <p className="text-gray-300">
+          All Stats about your favorite players and team at one place.
+        </p>
+      </div>
     </div>
   </div>
 );
