@@ -24,41 +24,52 @@
 
 // export default Navbar;
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 
-const Navbar = ({ activeTab, setActiveTab }) => {
+const Navbar = () => {
   return (
     <nav className="bg-gray-900 text-gray-300 p-4 flex justify-between items-center border-b border-gray-700">
       <div className="flex space-x-6">
-        <button
-          className={`text-white ${activeTab === 'Home' ? 'text-purple-400 border-b-2 border-purple-400' : 'hover:text-purple-400'} transition duration-300`}
-          onClick={() => setActiveTab('Home')}
+        <NavLink
+          to="/"
+          className={({ isActive }) =>
+            `text-white ${isActive ? 'text-purple-400 border-b-2 border-purple-400' : 'hover:text-purple-400'} transition duration-300`
+          }
         >
           Home
-        </button>
-        <button
-          className={`text-white ml-4 ${activeTab === 'Matches' ?  'text-purple-400 border-b-2 border-purple-400' : 'hover:text-purple-400'} transition duration-300`}
-          onClick={() => setActiveTab('Matches')}
+        </NavLink>
+        <NavLink
+          to="/matches"
+          className={({ isActive }) =>
+            `text-white ml-4 ${isActive ? 'text-purple-400 border-b-2 border-purple-400' : 'hover:text-purple-400'} transition duration-300`
+          }
         >
           Matches
-        </button>
-        <button
-          className={`text-white ml-4 ${activeTab === 'Player Comparison' ?  'text-purple-400 border-b-2 border-purple-400' : 'hover:text-purple-400'} transition duration-300`}
-          onClick={() => setActiveTab('Player Comparison')}
+        </NavLink>
+        <NavLink
+          to="/player-comparison"
+          className={({ isActive }) =>
+            `text-white ml-4 ${isActive ? 'text-purple-400 border-b-2 border-purple-400' : 'hover:text-purple-400'} transition duration-300`
+          }
         >
           Player Comparison
-        </button>
-        <button
-          className={`text-white ml-4 ${activeTab === 'Table' ?  'text-purple-400 border-b-2 border-purple-400' : 'hover:text-purple-400'} transition duration-300`}
-          onClick={() => setActiveTab('Table')}
+        </NavLink>
+        <NavLink
+          to="/table"
+          className={({ isActive }) =>
+            `text-white ml-4 ${isActive ? 'text-purple-400 border-b-2 border-purple-400' : 'hover:text-purple-400'} transition duration-300`
+          }
         >
           Table
-        </button>
-        <button
-          className={`text-white ml-4 ${activeTab === 'Statistics' ?  'text-purple-400 border-b-2 border-purple-400' : 'hover:text-purple-400'} transition duration-300`}
-          onClick={() => setActiveTab('Statistics')}
+        </NavLink>
+        <NavLink
+          to="/statistics"
+          className={({ isActive }) =>
+            `text-white ml-4 ${isActive ? 'text-purple-400 border-b-2 border-purple-400' : 'hover:text-purple-400'} transition duration-300`
+          }
         >
           Statistics
-        </button>
+        </NavLink>
       </div>
       <button className="bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700 transition duration-300">Login</button>
     </nav>
@@ -66,4 +77,3 @@ const Navbar = ({ activeTab, setActiveTab }) => {
 };
 
 export default Navbar;
-
