@@ -108,7 +108,7 @@ const StatisticsPage = () => {
             IPL Statistics
           </h2>
           <div className="mb-8">
-            <Select onValueChange={handleYearChange} defaultValue="2023">
+            <Select onValueChange={handleYearChange} defaultValue="allseason">
               <SelectTrigger className="w-[180px] bg-white bg-opacity-20 text-white border-none">
                 <SelectValue placeholder="Select year" />
               </SelectTrigger>
