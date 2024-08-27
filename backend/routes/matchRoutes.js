@@ -13,7 +13,8 @@ router.get('/:seasonId', async (req, res) => {
     const matches = await Match.find({ season: req.params.seasonId })
       .populate('team1', 'name color')
       .populate('team2', 'name color')
-      .populate('venue', 'name city');
+      .populate('venue', 'name city')
+      .populate('result.man_of_the_match', 'name');
 
     // If no matches found
     if (!matches.length) {

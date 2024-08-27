@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 const Team = require('./Team'); // This is already present
 const Venue = require('./Venue'); // Import the Venue model here
+const Player = require('./Player');
 
 const matchSchema = new mongoose.Schema({
     season: {
