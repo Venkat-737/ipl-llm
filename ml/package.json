@@ -1,0 +1,17 @@
+{
+  "dependencies": {
+    "@mistralai/mistralai": "^1.0.4",
+    "axios": "^1.7.5",
+    "dotenv": "^16.4.5"
+  },
+  "name": "ml",
+  "version": "1.0.0",
+  "main": "llmintegration.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
