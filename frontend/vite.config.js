@@ -11,4 +11,9 @@ export default defineConfig({
       '@/lib': path.resolve(__dirname, './src/lib'),
     },
   },
+  server: {
+    proxy: {
+      '/api': 'http://localhost:5001' // Adjust this port if your backend runs on a different port
+    }
+  }
 })

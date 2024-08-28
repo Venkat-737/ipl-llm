@@ -1,5 +1,7 @@
 import React from 'react';
 import { Clock, MapPin, Award } from 'lucide-react';
+import CommentarySection from '../components/CommentarySection.jsx';
+
 
 const MatchDetails = ({ match }) => {
   const calculateTotalScore = (innings) => {
@@ -70,6 +72,9 @@ const MatchDetails = ({ match }) => {
         {renderInnings(match.first_innings, "First Innings")}
         {renderInnings(match.second_innings, "Second Innings")}
       </div>
+      <CommentarySection matchId={match._id} team1={match.team1.name}
+  team2={match.team2.name}
+  venue={match.venue.name} />
     </div>
   );
 };
