@@ -2,7 +2,7 @@
   "dependencies": {
     "@mistralai/mistralai": "^1.0.4",
     "axios": "^1.7.5",
-    "dotenv": "^16.4.5"
+    "dotenv": "^16.6.1"
   },
   "name": "ml",
   "version": "1.0.0",
